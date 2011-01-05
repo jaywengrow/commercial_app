@@ -1,0 +1,12 @@
+Notes describing model for Commercial.ize
+
+There should be a standard user model, although there should be 3 types of users:
+1) Businesses
+2) Posters
+3) Admin
+
+Business (users) have many "Commercials"
+Posters have many "Posts"
+Commercials also have many "Posts"
+so Posts belongs to both Posters and Businesses.
+A Business can have many Posts through commercials.

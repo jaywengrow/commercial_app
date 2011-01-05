@@ -6,7 +6,7 @@ render_views
 
   describe "GET 'home'" do
     it "should be successful" do
-      get 'home'
+      get :home
       response.should be_success
     end
     
@@ -18,15 +18,25 @@ render_views
 
   describe "GET 'contact'" do
     it "should be successful" do
-      get 'contact'
+      get :contact
       response.should be_success
+    end
+    
+    it "should have a title saying 'Contact'" do
+      get :contact
+      response.should have_selector("title", :content => "Contact")
     end
   end
 
   describe "GET 'about'" do
     it "should be successful" do
-      get 'about'
+      get :about
       response.should be_success
+    end
+    
+    it "should have a title saying 'About'" do
+      get :about
+      response.should have_selector("title", :content => "About")
     end
   end
 

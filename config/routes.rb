@@ -1,10 +1,14 @@
 CommercialApp::Application.routes.draw do
+
+
   root :to => "pages#home"
-
-  get "pages/contact"
-
-  get "pages/about"
-
+  match '/contact', :to => 'pages#contact'
+  match '/about',   :to => 'pages#about'
+  
+  match '/signup',  :to => 'users#new'
+  
+  resources :users
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

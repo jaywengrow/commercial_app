@@ -156,5 +156,29 @@ describe User do
   		@user.should be_admin
   	end
   end
+  
+  describe "commercial associations" do
+    	
+    before(:each) do
+  		@user = User.create!(@attr)
+			@com1 = Factory(:commercial, :user => @user, :created_at => 1.day.ago)
+			@com2 = Factory(:commercial, :user => @user, :created_at => 1.hour.ago)
+  	end
+  
+  	it "should respond to commercials" do
+  		@user.should respond_to(:commercials)
+  	end
+  	
+  	it "should have commercials created in order starting from most recent" do
+			@user.commercials.should == [@com2, @com1]
+		end
+	
+		it "should destroy associated commercials" do
+			@user.destroy
+			[@com1, @com2].each do |commercial|
+				Commercial.find_by_id(commercial.id).should be_nil
+			end
+		end
+  end
 end
 

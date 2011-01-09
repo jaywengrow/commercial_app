@@ -8,3 +8,8 @@ end
 Factory.sequence :email do |n|
 	"person-#{n}@example.com"
 end
+
+Factory.define :commercial do |commercial|
+	commercial.transcript "This is the transcript!"
+	commercial.association :user
+end

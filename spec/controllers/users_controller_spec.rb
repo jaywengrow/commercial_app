@@ -35,6 +35,16 @@ describe UsersController do
       get :show, :id => @user
       response.should have_selector("img", :class => "gravatar")
     end
+    
+    it "should show the business user's transcripts" do
+    	com1 = Factory(:commercial, :user => @user)
+			com2 = Factory(:commercial, :user => @user, :transcript => "second script")
+			get :show, :id => @user
+			response.should have_selector("p.transcript",
+			 															:content => com1.transcript)
+			response.should have_selector("p.transcript",
+			 							  							:content => com2.transcript)
+  	end
   end
   
   describe "POST 'create'" do

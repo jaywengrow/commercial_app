@@ -5,6 +5,11 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      <% unless @user.commercials.empty? %>
+      	<table class="commercials" summary "Commercial transcripts">
+      		<%= render @commercials %>
+      	</table>
+ 			<% end %>
     </td>
     <td class="sidebar round">
       <strong>Name</strong> <%= @user.name %><br />

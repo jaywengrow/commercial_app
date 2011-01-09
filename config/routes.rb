@@ -1,5 +1,6 @@
 CommercialApp::Application.routes.draw do
 
+
   root :to => "pages#home"
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
@@ -9,8 +10,9 @@ CommercialApp::Application.routes.draw do
   match '/signout', :to => 'sessions#destroy'
   
   resources :users
+ 	resources :commercials 
   resources :sessions, :only => [:new, :create, :destroy]
-  
+ 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

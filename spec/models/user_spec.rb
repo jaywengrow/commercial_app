@@ -157,6 +157,26 @@ describe User do
   	end
   end
   
+  describe "business_user attribute" do
+  
+  	before(:each) do
+  		@user = User.create!(@attr)
+  	end
+  	
+  	it "should respond to business_user" do
+  		@user.should respond_to(:business_user)
+  	end
+  	
+  	it "should not be an business_user by default" do
+  		@user.should_not be_business_user
+  	end
+  	
+  	it "should be convertible to an business_user" do
+  		@user.toggle!(:business_user)
+  		@user.should be_business_user
+  	end
+  end
+  
   describe "commercial associations" do
     	
     before(:each) do

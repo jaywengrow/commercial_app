@@ -4,6 +4,10 @@ module SessionsHelper
 		deny_access unless signed_in?
  	end
  	
+ 	def business_filter
+ 		redirect_to root_path unless current_user.business_user?
+ 	end
+ 	
 	def sign_in(user)
 		cookies.permanent.signed[:remember_token] = [user.id, user.salt]
 		current_user = user

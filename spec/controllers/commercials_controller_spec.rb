@@ -7,6 +7,7 @@ describe CommercialsController do
   
   	before(:each) do	
 			@user = test_sign_in(Factory(:user))
+			@user.toggle!(:business_user)
 		end
 
     it "should be successful" do
@@ -25,17 +26,25 @@ describe CommercialsController do
   describe "GET 'new'" do
     before(:each) do	
 			@user = test_sign_in(Factory(:user))
+			@user.toggle!(:business_user)
 		end
 		
     it "should be successful" do
       get 'new'
       response.should be_success
     end
+    
+    it "should deny non-business users" do
+    	@user.toggle!(:business_user)
+    	get :new
+    	response.should_not be_success
+    end
   end
 
   describe "POST 'create'" do
     before(:each) do	
 			@user = test_sign_in(Factory(:user))
+			@user.toggle!(:business_user)
 		end
     
     it "should be successful" do
@@ -112,6 +121,7 @@ describe CommercialsController do
   		post :create
   		response.should redirect_to(signin_path)
   	end
+  	
   end
 
 end

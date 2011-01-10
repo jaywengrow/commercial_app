@@ -17,6 +17,14 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @title = "Sign up"
+    @business = false
+  end
+  
+  def business_new
+  	@user = User.new
+  	@title = "Business sign up"
+  	@business = true
+  	render 'new'
   end
 
   def create
@@ -36,7 +44,6 @@ class UsersController < ApplicationController
 	end
 	
 	def update
-		@user = User.find(params[:id])
 		if @user.update_attributes(params[:user])
 			flash[:success] = "Profile updated."
 			redirect_to @user

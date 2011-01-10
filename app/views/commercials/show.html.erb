@@ -1,2 +1,4 @@
-<h1>Commercials#show</h1>
-<p>Find me in app/views/commercials/show.html.erb</p>
+<h1>Commercial from <%= "#{@commercial.user.name}" %></h1>
+<div>
+	<%= render @commercial %>
+</div>

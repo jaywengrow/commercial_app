@@ -1,2 +1,10 @@
-<h1>Commercials#new</h1>
-<p>Find me in app/views/commercials/new.html.erb</p>
+<h1>Create your new commercial here! Enter the transcript in the text box below:</h1>
+<%= form_for @commercial do |f| %>
+	<%= render 'shared/error_messages', :object => f.object %>
+	<div class="field">
+		<%= f.text_area :transcript %>
+	</div>
+	<div class="actions">
+		<%= f.submit "Submit" %>
+	</div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110109154607) do
+ActiveRecord::Schema.define(:version => 20110110201807) do
 
   create_table "commercials", :force => true do |t|
     t.text     "transcript"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20110109154607) do
     t.string   "encrypted_password"
     t.string   "salt"
     t.boolean  "admin",              :default => false
+    t.boolean  "business_user",      :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

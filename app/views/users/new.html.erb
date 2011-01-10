@@ -18,6 +18,13 @@
     <%= f.label :password_confirmation, "Confirm password" %><br />
     <%= f.password_field :password_confirmation %>
   </div>
+  <div>
+		<% if @business %>	
+	  	<p>You can publish your first commercial transcript today!</p>
+			<%= f.hidden_field :business_user, :value => @business %>
+		<% end %>
+  </div>
+  	
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

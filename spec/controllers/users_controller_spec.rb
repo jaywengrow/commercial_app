@@ -37,6 +37,7 @@ describe UsersController do
     end
     
     it "should show the business user's transcripts" do
+    	test_sign_in(@user)
     	com1 = Factory(:commercial, :user => @user)
 			com2 = Factory(:commercial, :user => @user, :transcript => "second script")
 			get :show, :id => @user

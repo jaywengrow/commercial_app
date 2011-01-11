@@ -1,0 +1,18 @@
+<%= form_for(@post) do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :embed_text %><br />
+    <%= f.text_area :embed_text %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+  <div>
+  	<%= f.hidden_field :commercial_id, :value => @commercial.id %>
+  </div>
+  <p>Transcript: <%= "#{@commercial.transcript}" %></p>
+<% end %>

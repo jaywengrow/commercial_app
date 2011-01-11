@@ -1,6 +1,6 @@
 class CommercialsController < ApplicationController
 	before_filter :authenticate
-	before_filter :business_filter
+	before_filter :business_filter, :except => [:index, :show]
 	before_filter :correct_user, :only => [:edit, :update, :destroy]
 	
   def index
@@ -10,6 +10,8 @@ class CommercialsController < ApplicationController
 
   def show
   	@commercial = Commercial.find(params[:id])
+  	@show = true # lets commercial partial in view know it's coming from show action
+  	@posts = @commercial.posts
   	title = "Commercial transcript from #{@commercial.user.name}"
   end
 

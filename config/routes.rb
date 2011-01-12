@@ -10,9 +10,8 @@ CommercialApp::Application.routes.draw do
   match '/signout', :to => 'sessions#destroy'
   
   resources :users
- 	resources :commercials #do
- 		resources :posts
- #	end
+ 	resources :commercials
+ 	resources :posts, :except => [:index, :show]
   resources :sessions, :only => [:new, :create, :destroy]
  
   # The priority is based upon order of creation:

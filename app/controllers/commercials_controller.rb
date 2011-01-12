@@ -1,5 +1,5 @@
 class CommercialsController < ApplicationController
-	before_filter :authenticate
+	before_filter :authenticate, :except => [:index, :show]
 	before_filter :business_filter, :except => [:index, :show]
 	before_filter :correct_user, :only => [:edit, :update, :destroy]
 	

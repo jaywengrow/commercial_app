@@ -29,13 +29,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    @business = @user.business_user
+    logger.debug "Value of @business #{@business}"
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to Commercial.ize!"
       redirect_to @user
     else
-      @title = "Sign up"
-      render 'new'
+			@title = "Sign up"
+    	@title = "Business sign up" if @business
+			render 'new'
     end
   end
 

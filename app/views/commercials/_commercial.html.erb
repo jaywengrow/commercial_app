@@ -1,5 +1,6 @@
 <tr>
 	<td class "commerical">
+		<h6 class="commercial_header">Company: <%= "#{commercial.user.name}" %></h6>
 		<p class="transcript"><%= commercial.transcript %></p>
 		<span class="timestamp">
 			Posted <%= time_ago_in_words(commercial.created_at) %> ago.
@@ -8,12 +9,15 @@
 			<%= link_to "Edit", edit_commercial_path(commercial) %>
 			<%= link_to "Delete", commercial, :method => :delete, :confirm => "Are you sure?" %>
 		<% end %>
-		<% if !(current_user.business_user?) %>
+		<% if signed_in? && !(current_user.business_user?) %>
 			<%= link_to "Post a video!", new_post_path(:commercial_id => commercial.id) %>
 		<% end %>
-		<br /><br />
+		<br />
 		<% if @show %>
 			<%= render @posts %>
+		<% else %>
+			<%= link_to "See all users' posts for this commercial! (#{commercial.posts.count} posts)", commercial_path(commercial) %>
 		<% end %>		
+			<br /><br />
 	</td>
 </tr>

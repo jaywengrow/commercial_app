@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @commercials = @user.commercials
+    @posts = @user.posts
     @title = @user.name
   end  
   

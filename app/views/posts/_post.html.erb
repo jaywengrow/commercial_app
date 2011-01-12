@@ -1,4 +1,4 @@
-<span>Post #<%= "#{post.id}" %>:</span>
+<span>From #<%= "#{post.user.name}" %>:</span>
 <span>Title: <%= "#{post.title}" %>:</span>
 <div><%= sanitize post.embed_text, :tags => %w(embed object param) %></div>
 <% if current_user == post.user %>	

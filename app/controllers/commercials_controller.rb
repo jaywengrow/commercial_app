@@ -12,7 +12,7 @@ class CommercialsController < ApplicationController
   	@commercial = Commercial.find(params[:id])
   	@show = true # lets commercial partial in view know it's coming from show action
   	@posts = @commercial.posts
-  	title = "Commercial transcript from #{@commercial.user.name}"
+  	@title = "Commercial transcript from #{@commercial.user.name}"
   end
 
   def new

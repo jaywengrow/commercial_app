@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = current_user.posts.build(params[:post])
+		@commercial = @post.commercial
   	if @post.save
   		flash[:success] = "Post created for commercial #{@post.commercial_id}!"
   		redirect_to commercial_path(@post.commercial)
@@ -38,9 +39,11 @@ class PostsController < ApplicationController
 	end
 	
 	def destroy
-	  Post.find(params[:id]).destroy
+		@post = Post.find(params[:id])
+		@commercial = @post.commercial
+		@post.destroy
 		flash[:success] = "Post destroyed."
-		redirect_to user_path(current_user)
+		redirect_to commercial_path(@commercial)
 	end
 	
 	private

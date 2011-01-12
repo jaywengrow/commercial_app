@@ -16,6 +16,8 @@ class Post < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :commercial
 
+	validates :title,      :presence => true
+	validates :embed_text, :presence => true
 
 
 end

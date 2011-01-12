@@ -10,6 +10,11 @@
       		<%= render @commercials %>
       	</table>
  			<% end %>
+ 			<% unless @user.posts.empty? %>
+ 				<table class="posts" summary "User Posts">
+ 					<%= render @posts %>
+ 				</table>
+ 			<% end %>
     </td>
     <td class="sidebar round">
       <strong>Name</strong> <%= @user.name %><br />

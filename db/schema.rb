@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110111223006) do
+ActiveRecord::Schema.define(:version => 20110112230337) do
 
   create_table "commercials", :force => true do |t|
     t.text     "transcript"
@@ -45,5 +45,16 @@ ActiveRecord::Schema.define(:version => 20110111223006) do
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+
+  create_table "votes", :force => true do |t|
+    t.integer  "value"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "post_id"
+  end
+
+  add_index "votes", ["post_id"], :name => "index_votes_on_post_id"
+  add_index "votes", ["user_id"], :name => "index_votes_on_user_id"
 
 end

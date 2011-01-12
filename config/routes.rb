@@ -8,6 +8,7 @@ CommercialApp::Application.routes.draw do
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
+  match '/vote',    :to => 'votes#vote'
   
   resources :users
  	resources :commercials

@@ -1,6 +1,6 @@
 <span>Post #<%= "#{post.id}" %>:</span>
 <span>Title: <%= "#{post.title}" %>:</span>
-<div><%= raw post.embed_text %></div>
+<div><%= sanitize post.embed_text, :tags => %w(embed object param) %></div>
 <% if current_user == post.user %>	
 	<%= link_to "Edit", edit_post_path(post) %>
 	<%= link_to "Delete", post, :method => :delete, :confirm => "Are you sure?" %>

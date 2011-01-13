@@ -5,6 +5,10 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+        <% if current_user?(@user) %>
+        	<h3><%= link_to "Edit profile", edit_user_path(@user) %></h3>
+        <% end %>
+      
       <% unless @user.commercials.empty? %>
       	<table class="commercials" summary "Commercial transcripts">
       		<%= render @commercials %>

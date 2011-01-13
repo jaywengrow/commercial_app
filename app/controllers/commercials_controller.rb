@@ -2,6 +2,7 @@ class CommercialsController < ApplicationController
 	before_filter :authenticate, :except => [:index, :show]
 	before_filter :business_filter, :except => [:index, :show]
 	before_filter :correct_user, :only => [:edit, :update, :destroy]
+	before_filter :winner_auth, :only => [:choose_winner]
 	
   def index
   	@commercials = Commercial.all
@@ -53,10 +54,23 @@ class CommercialsController < ApplicationController
 		redirect_to user_path(current_user)
   end
   
+  def choose_winner
+  	logger.debug " howdy post #{@post.title} howdy commercial #{@commercial.transcript}"
+  	@post.toggle!(:winner)
+  	@commercial.toggle!(:closed)
+  	redirect_to commercial_path(@commercial)
+  end
+  
   private
   	
   	def correct_user
   		@user = Commercial.find(params[:id]).user
   		redirect_to(root_path) unless current_user?(@user)
+		end
+		
+		def winner_auth
+	  	@post = Post.find(params[:post])
+	  	@commercial = @post.commercial
+	  	redirect_to(root_path) unless !@commercial.closed? && current_user?(@commercial.user)
 		end
 end

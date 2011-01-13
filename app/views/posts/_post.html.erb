@@ -1,3 +1,6 @@
+<% if post.winner? %>
+	<span id="winner">Congratulations to the winner!</span><br />
+<% end %>
 <span>From <%= gravatar_for post.user, :size => 30 %><%= "#{post.user.name}" %>:</span>
 <span><%= "#{post.title}" %></span>
 <div><%= sanitize post.embed_text, :tags => %w(embed object param) %></div>
@@ -23,6 +26,10 @@
 <% if (current_user == post.user) || (current_user == post.commercial.user) %>	
 	<%= link_to "Edit", edit_post_path(post) %>
 	<%= link_to "Delete", post, :method => :delete, :confirm => "Are you sure?" %>
+<% end %>
+<% if current_user == post.commercial.user && !post.commercial.closed? %>
+	<%= link_to "Select as winner", choose_winner_path(:post => post.id), 
+																										 :confirm => "Are you sure that you want to select this post as the winner?" %>
 <% end %>
 <br /><br />
 

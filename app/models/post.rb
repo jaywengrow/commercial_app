@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110112231446
+# Schema version: 20110113204929
 #
 # Table name: posts
 #
@@ -11,6 +11,7 @@
 #  updated_at    :datetime
 #  commercial_id :integer
 #  vote_total    :integer
+#  winner        :boolean
 #
 
 class Post < ActiveRecord::Base

@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110109154607
+# Schema version: 20110113194734
 #
 # Table name: commercials
 #
@@ -8,6 +8,7 @@
 #  user_id    :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  closed     :boolean
 #
 
 class Commercial < ActiveRecord::Base

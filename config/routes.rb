@@ -9,6 +9,7 @@ CommercialApp::Application.routes.draw do
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   match '/vote',    :to => 'votes#vote'
+  match '/choose_winner', :to => 'commercials#choose_winner'
   
   resources :users
  	resources :commercials

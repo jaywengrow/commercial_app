@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	before_filter :authenticate
-	before_filter :non_business_filter
+	before_filter :non_business_filter, :except => [:edit, :update, :destroy]
 	before_filter :correct_user, :only => [:edit, :update, :destroy]
 	
 	def new
@@ -22,13 +22,10 @@ class PostsController < ApplicationController
 	end
 	
 	def edit
-		@post = Post.find(params[:id])
-		@commercial = @post.commercial
 		render 'edit'
 	end
 	
 	def update
-		@post = Post.find(params[:id])
 		if @post.update_attributes(params[:post])
 			flash[:success] = "Post successfully edited!"
 			redirect_to commercial_path(@post.commercial)
@@ -39,8 +36,6 @@ class PostsController < ApplicationController
 	end
 	
 	def destroy
-		@post = Post.find(params[:id])
-		@commercial = @post.commercial
 		@post.destroy
 		flash[:success] = "Post destroyed."
 		redirect_to commercial_path(@commercial)
@@ -49,7 +44,10 @@ class PostsController < ApplicationController
 	private
   	
   	def correct_user
+  		@post = Post.find(params[:id])
+  		@commercial = @post.commercial
   		@user = Post.find(params[:id]).user
-  		redirect_to(root_path) unless current_user?(@user)
+  		#logger.debug "howdy howdy howdy #{@post} #{@commercial} #{commercial.user}"
+  		redirect_to(root_path) unless current_user?(@user) || current_user?(@commercial.user)
 		end
 end

@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110112213437
+# Schema version: 20110112231446
 #
 # Table name: votes
 #
@@ -8,6 +8,7 @@
 #  user_id    :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  post_id    :integer
 #
 
 class Vote < ActiveRecord::Base

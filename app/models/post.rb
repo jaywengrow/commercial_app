@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110111223006
+# Schema version: 20110112231446
 #
 # Table name: posts
 #
@@ -10,6 +10,7 @@
 #  created_at    :datetime
 #  updated_at    :datetime
 #  commercial_id :integer
+#  vote_total    :integer
 #
 
 class Post < ActiveRecord::Base

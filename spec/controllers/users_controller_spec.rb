@@ -202,7 +202,7 @@ describe UsersController do
 		describe "for signed-in users" do
 			
 			before(:each) do
-				wrong_user = Factory(:user, :email => "wronguser@example.net")
+				wrong_user = Factory(:user, :name => "Steve Plotskin", :email => "wronguser@example.net")
 				test_sign_in(wrong_user)
 			end
 			
@@ -227,16 +227,16 @@ describe UsersController do
 				response.should redirect_to(signin_path)
 				flash[:notice].should =~ /sign in/i
 			end
-
+		end
 			describe "for signed-in users" do
 
 				before(:each) do
 					@user = test_sign_in(Factory(:user))
-					second = Factory(:user, :email => "another@example.com")
-					third = Factory(:user, :email => "another@example.net")
+					second = Factory(:user, :name => "Steve Plotskin", :email => "another@example.com")
+					third = Factory(:user, :name => "Steve Plin", :email => "another@example.net")
 					@users = [@user, second, third]
 					30.times do
-						@users << Factory(:user, :email => Factory.next(:email))
+						@users << Factory(:user, :name => Factory.next(:name), :email => Factory.next(:email))
 					end
 				end
 
@@ -248,13 +248,6 @@ describe UsersController do
 				it "should have the right title" do
 					get :index
 					response.should have_selector("title", :content => "All users")
-				end
-
-				it "should have an element for each user" do
-					get :index
-					@users.each do |user|
-						response.should have_selector("li", :content => user.name)
-					end
 				end
 				
 				it "should have an element for each user" do
@@ -274,7 +267,7 @@ describe UsersController do
 																						 :content => "Next")
 				end
 
-			end
+			
 		end
 	end
 	
@@ -304,7 +297,7 @@ describe UsersController do
 		describe "as an admin user" do
 			
 			before(:each) do
-				admin = Factory(:user, :email => "admin@example.com", :admin => true)
+				admin = Factory(:user, :name => "Whoopi Silverberg", :email => "admin@example.com", :admin => true)
 				test_sign_in(admin)
 			end
 

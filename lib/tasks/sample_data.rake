@@ -10,8 +10,11 @@ namespace :db do
 								 :password_confirmation => "foobar")
 		admin.toggle!(:admin)
 		business = User.create(:name => "The Pet Store", :email => "pets@thepetstore.com", #sample business user
-													 :password => "loofapoofa", :password_confirmation => "loofapoofa")
+													 :password => "business", :password_confirmation => "business")
 		business.toggle!(:business_user)
+		business2 = User.create(:name => "SmallMart", :email => "smallmart@smallmart.com", #sample business user
+													 :password => "business", :password_confirmation => "business")
+		business2.toggle!(:business_user)
 		business.commercials.create!(:transcript => "Child: Hey, I want to get a puppy! \n Father: Sure thing, son! Let's go to The Pet Store!") #sample transcript
 		99.times do |n|
 			name = Faker::Name.name
@@ -22,7 +25,7 @@ namespace :db do
 									 :password => password,
 									 :password_confirmation => password)
 		end
-		poster = User.find(3)
+		poster = User.find(4)
 		poster.posts.create!(:title => "My version of this cute commercial!", :embed_text => "<object width=\"480\" height=\"385\"><param name=\"movie\" value=\"http://www.youtube.com/v/4xJsk0Vp7K0?fs=1&amp;hl=en_US&amp;rel=0\"></param><param name=\"allowFullScreen\" value=\"true\"></param><param name=\"allowscriptaccess\" value=\"always\"></param><embed src=\"http://www.youtube.com/v/4xJsk0Vp7K0?fs=1&amp;hl=en_US&amp;rel=0\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"480\" height=\"385\"></embed></object>", :commercial_id => 1)
 #		User.all(:limit => 4).each do |user|
 #			3.times do

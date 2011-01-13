@@ -8,7 +8,7 @@ class VotesController < ApplicationController
 		if @vote.save
 			@post.vote_total = @post.votes.sum(:value)
 			@post.save
-			flash[:success] = "Vote counted!"
+			#flash[:success] = "Vote counted!"
 		else
 			flash[:error] = "No vote!!!"
 		end

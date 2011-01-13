@@ -12,7 +12,11 @@ class VotesController < ApplicationController
 		else
 			flash[:error] = "No vote!!!"
 		end
-		redirect_to commercial_path(@post.commercial)
+		respond_to do |format|
+			format.html { redirect_to commercial_path(@post.commercial) }
+			format.js
+		end
+
 	end
 	
 

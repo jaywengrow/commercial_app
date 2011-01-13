@@ -1,0 +1,2 @@
+$("total_vote_display").update('<%= "#{@post.vote_total}" %>')
+$("vote").update('<% if @vote.value == 1 %><%= image_tag("thumbs_up.gif", :alt => "Thumbs up!") %>  <% end %>	<% if @vote.value == -1 %><%= image_tag("thumbs_down.gif", :alt => "Thumbs down!") %>  <% end %>')

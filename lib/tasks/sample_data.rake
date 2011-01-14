@@ -27,11 +27,10 @@ namespace :db do
 		end
 		poster = User.find(4)
 		poster.posts.create!(:title => "My version of this cute commercial!", :embed_text => "<object width=\"480\" height=\"385\"><param name=\"movie\" value=\"http://www.youtube.com/v/4xJsk0Vp7K0?fs=1&amp;hl=en_US&amp;rel=0\"></param><param name=\"allowFullScreen\" value=\"true\"></param><param name=\"allowscriptaccess\" value=\"always\"></param><embed src=\"http://www.youtube.com/v/4xJsk0Vp7K0?fs=1&amp;hl=en_US&amp;rel=0\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"480\" height=\"385\"></embed></object>", :commercial_id => 1)
-#		User.all(:limit => 4).each do |user|
-#			3.times do
-#				user.commercials.create!(:transcript => Faker::Lorem.sentence(50))
-#			end
-#		end
+		sleep(1.second)
+		poster = User.find(5)
+		poster.posts.create!(:title => "I'm gonna win!!!", :embed_text => "<object width=\"480\" height=\"385\"><param name=\"movie\" value=\"http://www.youtube.com/v/vSYadh2xmcI?fs=1&amp;hl=en_US&amp;rel=0\"></param><param name=\"allowFullScreen\" value=\"true\"></param><param name=\"allowscriptaccess\" value=\"always\"></param><embed src=\"http://www.youtube.com/v/vSYadh2xmcI?fs=1&amp;hl=en_US&amp;rel=0\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"480\" height=\"385\"></embed></object>", :commercial_id => 1)
+
 	end
 end
 

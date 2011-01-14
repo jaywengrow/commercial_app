@@ -21,6 +21,14 @@ class Post < ActiveRecord::Base
 
 	validates :title,      :presence => true
 	validates :embed_text, :presence => true
+	
+	scope :recent,  order('created_at DESC')
+	scope :popular, order('vote_total DESC')
+	
+	def thumbnail
+		video_id = /www.youtube.com\/v\/(.*)\?.*/.match(embed_text)[1]
+		thumbnail_url = "http://img.youtube.com/vi/" + video_id + "/1.jpg"
+	end
 
 
 end

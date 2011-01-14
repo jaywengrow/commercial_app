@@ -7,9 +7,9 @@
 <span>Current vote score: <div id="total_vote_display"><%= "#{post.vote_total}" %></div></span><br />
 <% if signed_in? && !current_user.business_user? %>	
 	<%= link_to image_tag("thumbs_up.gif", :alt => "Vote thumbs up!", :class => "thumb"), vote_path(:value => 1, :post => post.id), :class => "thumbs_up_button",
-			:remote => true %>
+			:remote => false %>
 	<%= link_to image_tag("thumbs_down.gif", :alt => "Vote thumbs down!", :class => "thumb"), vote_path(:value => -1,
-											  :post => post.id), :class => "thumbs_down_button", :remote => true %>
+											  :post => post.id), :class => "thumbs_down_button", :remote => false %>
 	<% @vote = Vote.find_by_user_id_and_post_id(current_user.id, post.id) %>
 	<div id="vote">
 	<% if @vote %>

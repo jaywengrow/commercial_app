@@ -1,60 +1,11 @@
-Notes describing model for Commercial.ize
+The sidebar should pull up the most popular commercials. This is determined by vote score, which is an attribute of Post.
+So, the sidebar should search through the entire collection of Posts and pull out the highest scoring ones.
 
-There should be a standard user model, although there should be 3 types of users:
-1) Businesses
-2) Posters
-3) Admin
+http://www.youtube.com/v/4xJsk0Vp7K0
 
-Business (users) have many "Commercials"
-Posters have many "Posts"
-Commercials also have many "Posts"
-so Posts belongs to both Posters and Businesses.
-
-Posts have many Votes.
-Posts will have a total_vote field in its database
-
-Vote:
-belongs to Post
-belongs to User
-
-voted_user_id :integer
-vote :integer (either -1 or 0 or 1 for down or no-vote or up respectively)
-
-
-
-
-Votes: 
-Posts will have a total_vote field in its database
-Posts will have a votes_table table in database. 
-
-Voted_user_id table:
-belongs to Post
-belongs to User (foreign key: voted_user_id)
-
-Fields:
-post_id :integer
-voted_user_id :integer
-vote :integer (either -1 or 0 or 1 for down or no-vote or up respectively)
-
-<% unless current_user?(@user) %>
-<div id="follow_form">
-<% if current_user.following?(@user) %>
-<%= render 'unfollow' %>
-<% else %>
-<%= render 'follow' %>
-<% end %>
-</div>
-<% end %>
-
-<%= form_for current_user.relationships.build(:followed_id => @user.id),
-:remote => true do |f| %>
-<div><%= f.hidden_field :followed_id %></div>
-<div class="actions"><%= f.submit "Follow" %></div>
-<% end %>
-
-$("follow_form").update("<%= escape_javascript(render('users/unfollow')) %>")
-$("followers").update('<%= "#{@user.followers.count} followers" %>')
-
-
-
-
+							http://img.youtube.com/vi/MDPGHPSnyMg/1.jpg
+							www.youtube.com/v/  vSYadh2xmcI    ?
+							
+							extraction code:  substring = /www.youtube.com\/v\/(.*)\?.*/.match(embed_text)
+							
+							"http://img.youtube.com/vi/" + substring + "/1.jpg"

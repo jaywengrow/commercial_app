@@ -11,7 +11,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @commercials = @user.commercials
-    @posts = @user.posts
+    @posts = @user.posts.recent
+    @popular_posts = Post.popular #Post.order("vote_total desc").limit(5)  
     @title = @user.name
   end  
   

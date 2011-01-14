@@ -21,6 +21,7 @@
 			<% end %>
  			<% unless @user.posts.empty? %>
  				<table class="posts" summary "User Posts">
+ 					<span>Your posts:</span><br />
  					<%= render @posts %>
  				</table>
  			<% end %>

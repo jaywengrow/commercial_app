@@ -1,7 +1,7 @@
 <% if post.winner? %>
-	<span id="winner">Congratulations to the winner!</span><br />
+	<span id="winner">This is the winning post!</span><br />
 <% end %>
-<span>From <%= gravatar_for post.user, :size => 30 %><%= "#{post.user.name}" %>:</span>
+<span><%= gravatar_for post.user, :size => 40 %>From <%= "#{post.user.name}" %>:</span>
 <span><%= "#{post.title}" %></span>
 <div><%= sanitize post.embed_text, :tags => %w(embed object param) %></div>
 <span>Current vote score: <div id="total_vote_display"><%= "#{post.vote_total}" %></div></span><br />

@@ -14,6 +14,11 @@
       		<%= render @commercials %>
       	</table>
  			<% end %>
+ 			<% unless @user.business_user? %>
+ 				<h1>Welcome, <%= "#{current_user.name}" %>.</h1>
+				<h3>At Commercial.ize, you don't have to sit and watch commercials. You can make your own!</h3>
+				<p>To start, you want to view the various commercial contests out there. To do so, click the "Commercials" link at the top of the page. You can edit your 					profile at any time by clicking on the "Edit profile" link.</p>
+			<% end %>
  			<% unless @user.posts.empty? %>
  				<table class="posts" summary "User Posts">
  					<%= render @posts %>

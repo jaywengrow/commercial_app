@@ -1,3 +1,3 @@
-$("total_vote_display").update('<%= "#{@post.vote_total}" %>')
-$("vote").update('<% if @vote %>	<p>You voted <% if @vote.value == 1 %><%= image_tag("thumbs_up.gif", :alt => "Thumbs up!") %>  <% end %><% if @vote.value == -1 %><%= image_tag("thumbs_down.gif", :alt => "Thumbs down!") %>  <% end %></p>	<% else %><div id="no_vote"> You have not yet voted!</div><% end %>')
+$("<%= @post.title %>").update('<%= "#{@post.vote_total}" %>')
+$("vote<%= @post.id %>").update('<% if @vote %>	<p>You voted <% if @vote.value == 1 %><%= image_tag("thumbs_up.gif", :alt => "Thumbs up!") %>  <% end %><% if @vote.value == -1 %><%= image_tag("thumbs_down.gif", :alt => "Thumbs down!") %>  <% end %></p>	<% else %><div id="no_vote"> You have not yet voted!</div><% end %>')
 

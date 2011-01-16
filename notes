@@ -9,3 +9,5 @@ http://www.youtube.com/v/4xJsk0Vp7K0
 							extraction code:  substring = /www.youtube.com\/v\/(.*)\?.*/.match(embed_text)
 							
 							"http://img.youtube.com/vi/" + substring + "/1.jpg"
+							
+							<div id="total_vote_display"><%= "#{post.vote_total}" %></div>

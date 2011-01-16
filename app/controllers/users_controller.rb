@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @commercials = @user.commercials
     @posts = @user.posts.recent
-    @popular_posts = Post.popular #Post.order("vote_total desc").limit(5)  
+    @popular_posts = Post.popular.limit_5 #limit still needs testing  
     @title = @user.name
   end  
   

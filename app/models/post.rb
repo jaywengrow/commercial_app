@@ -24,10 +24,12 @@ class Post < ActiveRecord::Base
 	
 	scope :recent,  order('created_at DESC')
 	scope :popular, order('vote_total DESC')
+	scope :limit_5, limit(5)
 	
-	def thumbnail
-		video_id = /www.youtube.com\/v\/(.*)\?.*/.match(embed_text)[1]
-		thumbnail_url = "http://img.youtube.com/vi/" + video_id + "/1.jpg"
+	
+	def thumbnail	
+		video_id = /youtube.com\/v\/(\w*)\?/.match(embed_text)[1]	
+  	thumbnail_url = "http://img.youtube.com/vi/" + video_id + "/1.jpg"
 	end
 
 

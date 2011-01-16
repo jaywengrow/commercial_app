@@ -1,23 +1,19 @@
 
 
-<table class="home">
- 	<td class="main">
- 	<%= yield %>
- 		 </td>
- 		  <tr>
-      	<td class="bottombar round">
-     
-      <strong>Most popular commercials</strong><br />
-      <% popular_posts.each do |post| %>
+<div class="main round">	
+	<strong>Most recent contests:</strong><br />
+	<% recent_commercials.each do |commercial| %>
+		<%= link_to "#{commercial.transcript}", commercial_path(commercial) %><br />
+	<% end %>
+</div>
+<div class="bottombar round">
+	<strong>Most popular commercials:</strong><br />
+			<% popular_posts.each do |post| %>
  
 				<%= image_tag("#{post.thumbnail}") %><br />
-				<%= link_to "#{post.title}", commercial_path(post.commercial) %>
+				<%= link_to "#{post.title}", commercial_path(post.commercial) %><br />
 			
 			<% end %>
 			
-     		</td>
-    </tr>
+</div>
 
-
-	 
-</table>

@@ -10,6 +10,7 @@
         <% end %>
       
       <% unless @user.commercials.empty? %>
+      	<h3>Active contests:</h3><br />
       	<table class="commercials" summary "Commercial transcripts">
       		<%= render @commercials %>
       	</table>
@@ -20,7 +21,7 @@
 				<p>To start, you want to view the various commercial contests out there. To do so, click the "Commercials" link at the top of the page. You can edit your 					profile at any time by clicking on the "Edit profile" link.</p>
 			<% end %>
 			<% if current_user == @user && current_user.business_user? %>
-				<%= link_to "Create new commercial", new_commercial_path, :class => "signup_button round" %>
+				<%= link_to "Create new contest", new_commercial_path, :class => "signup_button round" %>
 			<% end %>
  			<% unless @user.posts.empty? %>
  				<table class="posts" summary "User Posts">

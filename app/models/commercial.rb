@@ -19,5 +19,6 @@ class Commercial < ActiveRecord::Base
   validates :user_id,    :presence => true
   
   default_scope :order => 'commercials.created_at DESC'
+  scope :limit_5, limit(5)
 
 end

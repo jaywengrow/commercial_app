@@ -67,7 +67,7 @@ color: #09c;
 nav ul li a:hover {
 text-decoration: underline;
 }
-/* Sign up button */
+/* buttons */
 a.signup_button {
 margin-left: auto;
 margin-right: auto;
@@ -88,6 +88,30 @@ text-align: center;
 width: 190px;
 color: #fff;
 background: #43CD80;
+font-size: 150%;
+font-weight: bold;
+padding: 20px;
+}
+a.post_button {
+margin-left: auto;
+margin-right: auto;
+display: block;
+text-align: center;
+width: 190px;
+color: #000;
+background: #FFC125;
+font-size: 150%;
+font-weight: bold;
+padding: 20px;
+}
+a.contest_button {
+margin-left: auto;
+margin-right: auto;
+display: block;
+text-align: center;
+width: 190px;
+color: #fff;
+background: #FF3030;
 font-size: 150%;
 font-weight: bold;
 padding: 20px;

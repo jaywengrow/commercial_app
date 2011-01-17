@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110117021313) do
+ActiveRecord::Schema.define(:version => 20110117163458) do
 
   create_table "commercials", :force => true do |t|
     t.text     "transcript"
@@ -25,17 +25,18 @@ ActiveRecord::Schema.define(:version => 20110117021313) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
-    t.text     "embed_text"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "commercial_id"
     t.integer  "vote_total"
     t.boolean  "winner",        :default => false
+    t.string   "video_id"
   end
 
   add_index "posts", ["commercial_id"], :name => "index_posts_on_commercial_id"
   add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
+  add_index "posts", ["video_id"], :name => "index_posts_on_video_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

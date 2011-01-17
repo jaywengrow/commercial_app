@@ -4,24 +4,26 @@
 			<%= link_to "View by most recent", commercial_path(commercial, :view => "recent", :class => "left_link") %><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 			<%= link_to "View by highest voted", commercial_path(commercial, :view => "popular", :class => "right_link") %><br />
 		<% end %>
+		<h4 class="commercial_business"><%= gravatar_for commercial.user, :size => 40 %>&nbsp;<%= "#{commercial.user.name}" %></h4>
 		<h5 class="commercial_title"><%= "#{commercial.title}" %></h5>
 		<h6>Contest details:</h6>
 		<p class="transcript"><%= commercial.transcript %></p>
 		<span class="timestamp">
-			Posted <%= time_ago_in_words(commercial.created_at) %> ago.
+			Launched <%= time_ago_in_words(commercial.created_at) %> ago.
 		</span>
 		<% if current_user == commercial.user %>	
 			<%= link_to "Edit", edit_commercial_path(commercial) %>
 			<%= link_to "Delete", commercial, :method => :delete, :confirm => "Are you sure?" %>
 		<% end %>
-		<% if signed_in? && !(current_user.business_user?) %>
-			<%= link_to "Post a video!", new_post_path(:commercial_id => commercial.id) %>
+		<% if signed_in? && !(current_user.business_user?) && @show %>
+			<%= link_to "Post a video!", new_post_path(:commercial_id => commercial.id), :class => "post_button round" %>
 		<% end %>
 		<br />
 		<% if @show %>
 			<%= render @posts %>
 		<% else %>
-			<%= link_to "See all users' posts for this commercial! (#{commercial.posts.count} posts)", commercial_path(commercial) %>
+			<%= link_to "Go to contest!", commercial_path(commercial), :class => "contest_button round" %>
+			 <div class="center"><%= "(#{commercial.posts.count} posts)" %></div>
 		<% end %>		
 			<br /><br />
 	</td>

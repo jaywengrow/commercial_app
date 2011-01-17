@@ -11,6 +11,7 @@ CommercialApp::Application.routes.draw do
   match '/vote',    :to => 'votes#vote'
   match '/choose_winner', :to => 'commercials#choose_winner'
   match '/business_users', :to => 'users#business_index'
+  match '/embed_help', :to => 'posts#embed_help'
   
   resources :users
  	resources :commercials

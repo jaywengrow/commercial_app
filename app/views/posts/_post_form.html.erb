@@ -1,11 +1,12 @@
 <%= form_for(@post) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
+  <p class="center">First, you must <%= link_to "upload your video to YouTube", "http://upload.youtube.com/my_videos_upload", :target => "_blank" %>. Then, fill out the information requested below.</p>
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title %>&nbsp;&nbsp;(Create a title for your video.)<br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :embed_text %><br />
+    <%= f.label :embed_text %>&nbsp;&nbsp;&nbsp;<%= link_to "What on earth is an embed text?!", embed_help_path, :target => "_blank" %><br />
     <%= f.text_area :embed_text %>
   </div>
   <div class="actions">
@@ -14,5 +15,6 @@
   <div>
   	<%= f.hidden_field :commercial_id, :value => @commercial.id %>
   </div>
-  <p>Transcript: <%= "#{@commercial.transcript}" %></p>
+  <p><strong>Contest:</strong> <%= "#{@commercial.title}" %></p>
+  <p><strong>Details:</strong> <%= "#{@commercial.transcript}" %></p>
 <% end %>

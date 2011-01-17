@@ -3,7 +3,7 @@
 <% end %>
 <span><%= gravatar_for post.user, :size => 40 %>From <%= "#{post.user.name}" %>:</span>
 <span><%= "#{post.title}" %></span>
-<div><%= sanitize post.embed_text, :tags => %w(embed object param) %></div>
+<div><%= sanitize post.video_display, :tags => %w(embed object param) %></div>
 <span>Current vote score: <div id="<%= post.title %>"><%= "#{post.vote_total}" %></div></span><br />
 <% if signed_in? && !current_user.business_user? %>	
 	<%= link_to image_tag("thumbs_up.gif", :alt => "Vote thumbs up!", :class => "thumb"), vote_path(:value => 1, :post => post.id), :class => "thumbs_up_button",

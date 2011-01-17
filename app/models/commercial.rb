@@ -13,6 +13,8 @@
 #
 
 class Commercial < ActiveRecord::Base
+	attr_accessible :title, :transcript
+	
 	has_many :posts
 	belongs_to :user
 

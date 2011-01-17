@@ -41,10 +41,10 @@ namespace :db do
 		end
 		poster = User.find(4)
 		poster.posts.create!(:title => "Pick my pet", :embed_text => "<object width=\"480\" height=\"385\"><param name=\"movie\" value=\"http://www.youtube.com/v/4xJsk0Vp7K0?fs=1&amp;hl=en_US&amp;rel=0\"></param><param name=\"allowFullScreen\" value=\"true\"></param><param name=\"allowscriptaccess\" value=\"always\"></param><embed src=\"http://www.youtube.com/v/4xJsk0Vp7K0?fs=1&amp;hl=en_US&amp;rel=0\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"480\" height=\"385\"></embed></object>", :commercial_id => 1)
-		sleep(1.second)
+		#sleep(1.second)
 		poster = User.find(5)
 		poster.posts.create!(:title => "Elmo makes a cute pet, don't you think?", :embed_text => "<object width=\"480\" height=\"385\"><param name=\"movie\" value=\"http://www.youtube.com/v/vSYadh2xmcI?fs=1&amp;hl=en_US&amp;rel=0\"></param><param name=\"allowFullScreen\" value=\"true\"></param><param name=\"allowscriptaccess\" value=\"always\"></param><embed src=\"http://www.youtube.com/v/vSYadh2xmcI?fs=1&amp;hl=en_US&amp;rel=0\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"480\" height=\"385\"></embed></object>", :commercial_id => 1)
-		sleep(1.second)
+		#sleep(1.second)
 		poster = User.find(6)
 		poster.posts.create!(:title => "The funniest SmallMart commercial ever!", :embed_text => "<object width=\"640\" height=\"385\"><param name=\"movie\" value=\"http://www.youtube.com/v/JIX0LsYuUHA?fs=1&amp;hl=en_US&amp;rel=0\"></param><param name=\"allowFullScreen\" value=\"true\"></param><param name=\"allowscriptaccess\" value=\"always\"></param><embed src=\"http://www.youtube.com/v/JIX0LsYuUHA?fs=1&amp;hl=en_US&amp;rel=0\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"640\" height=\"385\"></embed></object>", :commercial_id => 2)
 

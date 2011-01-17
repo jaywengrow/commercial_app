@@ -5,7 +5,7 @@ module ApplicationHelper
     end
     
     def popular_posts
-    	@popular_posts = Post.popular.limit_5
+    	@popular_posts = Post.popular.limit_3
     end
     
     def recent_commercials

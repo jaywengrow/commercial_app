@@ -2,7 +2,7 @@
 width: 710px;
 }
 body {
-background: #cff;
+background: #D4D4D4;
 }
 header {
 padding-top: 20px;
@@ -68,7 +68,19 @@ display: block;
 text-align: center;
 width: 190px;
 color: #fff;
-background: #006400;
+background: #8470FF;
+font-size: 150%;
+font-weight: bold;
+padding: 20px;
+}
+a.b_signup_button {
+margin-left: auto;
+margin-right: auto;
+display: block;
+text-align: center;
+width: 190px;
+color: #fff;
+background: #43CD80;
 font-size: 150%;
 font-weight: bold;
 padding: 20px;
@@ -93,15 +105,20 @@ footer nav {
 float: none;
 }
 /* experiment */
+.center {
+text-align: center;
+}
 div.main {
+text-align: center;
 float: left;
 width: 50%;
-background: #9c9;
+background: #D4D4D4;
 }
 div.bottombar {
+text-align: center;
 float: right;
 width: 50%;
-background: #c9c;
+background: #D4D4D4;
 }
 /* User show page */
 table.profile {

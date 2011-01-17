@@ -55,7 +55,7 @@ describe CommercialsController do
     describe "failure" do
     
     	before(:each) do
-    		@attr = { :transcript => " " }
+    		@attr = { :transcript => " " , :title => "some title"}
     	end
     	
     	it "should not create a commercial" do
@@ -73,7 +73,7 @@ describe CommercialsController do
     describe "success" do
     
     	before(:each) do
-    		@attr = { :transcript => "Here's a transcript" }
+    		@attr = { :transcript => "Here's a transcript" , :title => "some title"}
     	end
     	
     	it "should create a commercial" do

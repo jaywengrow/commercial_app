@@ -15,8 +15,21 @@ namespace :db do
 		business2 = User.create(:name => "SmallMart", :email => "smallmart@smallmart.com", #sample business user
 													 :password => "business", :password_confirmation => "business")
 		business2.toggle!(:business_user)
-		business.commercials.create!(:transcript => "Make our next Pet Store Super bowl ad and win airfare to London!") #sample transcript
-		business2.commercials.create!(:transcript => "Make any originial commercial for SmallMart and win $1000 CASH!")
+		business3 = User.create(:name => "Best Coffee", :email => "best@coffee.com", #sample business user
+													 :password => "business", :password_confirmation => "business")
+		business3.toggle!(:business_user)
+		business4 = User.create(:name => "Book Depot", :email => "book@depot.com", #sample business user
+													 :password => "business", :password_confirmation => "business")
+		business4.toggle!(:business_user)
+		business5 = User.create(:name => "Edible Cookies", :email => "edible@cookies.com", #sample business user
+													 :password => "business", :password_confirmation => "business")
+		business5.toggle!(:business_user)
+		business.commercials.create!(:title => "Make our next Pet Store Super bowl ad and win airfare to London!", :transcript => "Self explanatory!") 
+		business2.commercials.create!(:title => "Make any originial commercial for SmallMart and win $1000 CASH!", :transcript => "Self explanatory!")
+		business3.commercials.create!(:title => "Create a jingle describing the rich taste of our coffee and win a lot of coffee!", :transcript => "Self explanatory!")
+		business4.commercials.create!(:title => "Display a funny scene about people buying books at our competitors! Win $20,000!", :transcript => "Self explanatory!")
+		business5.commercials.create!(:title => "Explain what makes our cookies so edible and win TWO Concorde Jets!", :transcript => "Self explanatory!")
+		
 		99.times do |n|
 			name = Faker::Name.name
 			email = "example-#{n+1}@railstutorial.org"

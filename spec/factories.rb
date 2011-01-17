@@ -15,5 +15,6 @@ end
 
 Factory.define :commercial do |commercial|
 	commercial.transcript "This is the transcript!"
+	commercial.title "This is a stupid title."
 	commercial.association :user
 end

@@ -24,7 +24,7 @@ class Post < ActiveRecord::Base
 	
 	scope :recent,  order('created_at DESC')
 	scope :popular, order('vote_total DESC')
-	scope :limit_5, limit(5)
+	scope :limit_3, limit(3)
 	
 	
 	def thumbnail	

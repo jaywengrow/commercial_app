@@ -1,6 +1,11 @@
 <%= form_for @commercial do |f| %>
 	<%= render 'shared/error_messages', :object => f.object %>
 	<div class="field">
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</div>
+	<strong>Detailed contest instructions:</strong>
+	<div class="field">
 		<%= f.text_area :transcript %>
 	</div>
 	<div class="actions">

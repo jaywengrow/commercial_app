@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110113194734
+# Schema version: 20110117021313
 #
 # Table name: commercials
 #
@@ -9,6 +9,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  closed     :boolean
+#  title      :string(255)
 #
 
 class Commercial < ActiveRecord::Base
@@ -17,6 +18,7 @@ class Commercial < ActiveRecord::Base
 
   validates :transcript, :presence => true
   validates :user_id,    :presence => true
+  validates :title,    :presence => true
   
   default_scope :order => 'commercials.created_at DESC'
   scope :limit_5, limit(5)

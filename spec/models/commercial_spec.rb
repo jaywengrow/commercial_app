@@ -4,7 +4,7 @@ describe Commercial do
   
   before(:each) do
   	@user = Factory(:user)
-  	@attr = { :transcript => "some content" }
+  	@attr = { :transcript => "some content", :title => "some title" }
   end
   
 	it "should create a new instance given valid attributes" do

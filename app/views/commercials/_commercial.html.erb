@@ -1,6 +1,8 @@
 <tr>
 	<td class "commerical">
-		<h6 class="commercial_header">Company: <%= "#{commercial.user.name}" %></h6>
+		<h3 class="commercial_header">Company: <%= "#{commercial.user.name}" %></h6>
+		<h5 class="commercial_title"><%= "#{commercial.title}" %></h5><br />
+		<h6>Contest details:</h6><br />
 		<p class="transcript"><%= commercial.transcript %></p>
 		<span class="timestamp">
 			Posted <%= time_ago_in_words(commercial.created_at) %> ago.

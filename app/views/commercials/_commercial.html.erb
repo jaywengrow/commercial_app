@@ -1,8 +1,11 @@
 <tr>
-	<td class "commerical">
-		<h3 class="commercial_header">Company: <%= "#{commercial.user.name}" %></h6>
-		<h5 class="commercial_title"><%= "#{commercial.title}" %></h5><br />
-		<h6>Contest details:</h6><br />
+	<td class="commerical center">
+		<% if @show %>
+			<%= link_to "View by most recent", commercial_path(commercial, :view => "recent", :class => "left_link") %><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<%= link_to "View by highest voted", commercial_path(commercial, :view => "popular", :class => "right_link") %><br />
+		<% end %>
+		<h5 class="commercial_title"><%= "#{commercial.title}" %></h5>
+		<h6>Contest details:</h6>
 		<p class="transcript"><%= commercial.transcript %></p>
 		<span class="timestamp">
 			Posted <%= time_ago_in_words(commercial.created_at) %> ago.

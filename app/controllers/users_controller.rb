@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_filter :authenticate, :only => [:index, :edit, :update, :destroy]
+	before_filter :authenticate, :only => [:index, :edit, :update, :destroy, :business_index]
 	before_filter :correct_user, :only => [:edit, :update]  
 	before_filter :admin_user,   :only => :destroy
  
@@ -8,11 +8,16 @@ class UsersController < ApplicationController
  		@users = User.paginate(:page => params[:page])
  	end
  	
+ 	def business_index
+ 		@title = "All businesses"
+ 		@users = User.businesses
+ 		render 'business_index'
+ 	end
+ 	
   def show
     @user = User.find(params[:id])
     @commercials = @user.commercials
     @posts = @user.posts.recent
-    #@popular_posts = Post.popular.limit_5 #limit still needs testing  
     @title = @user.name
   end  
   

@@ -32,6 +32,13 @@ text-decoration: underline;
 a:visited {
 color: #069;
 }
+.left_link {
+text-align: center;
+}
+.right_link {
+text-align: center;
+}
+
 /* Navigation */
 nav {
 float: right;

@@ -36,6 +36,8 @@ class User < ActiveRecord::Base
 
   before_save :encrypt_password
   
+ 	scope :businesses,  where(:business_user => true)
+  
   def self.authenticate(email, submitted_password)
     user = find_by_email(email)
     return nil if user.nil?

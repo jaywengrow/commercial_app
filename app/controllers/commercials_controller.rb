@@ -13,7 +13,8 @@ class CommercialsController < ApplicationController
   	@commercial = Commercial.find(params[:id])
   	@show = true # lets commercial partial in view know it's coming from show action
   	@posts = @commercial.posts.recent
-  	@title = "Commercial transcript from #{@commercial.user.name}"
+  	@posts = @commercial.posts.popular if params[:view] == "popular"
+  	@title = "Commercial contest from #{@commercial.user.name}"
   end
 
   def new

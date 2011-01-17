@@ -1,18 +1,4 @@
-The sidebar should pull up the most popular commercials. This is determined by vote score, which is an attribute of Post.
-So, the sidebar should search through the entire collection of Posts and pull out the highest scoring ones.
-
-http://www.youtube.com/v/4xJsk0Vp7K0
-
-							http://img.youtube.com/vi/MDPGHPSnyMg/1.jpg
-							www.youtube.com/v/  vSYadh2xmcI    ?
-							
-							extraction code:  substring = /www.youtube.com\/v\/(.*)\?.*/.match(embed_text)
-							
-							"http://img.youtube.com/vi/" + substring + "/1.jpg"
-							
-							<div id="total_vote_display"><%= "#{post.vote_total}" %></div>
-							
-							<div class="main">	
-</div>
-<div class="bottombar">
-</div>
+TODO: 1. Make one be able to view all business users exclusively. CHECK!
+			2. Make that one can view posts of a commercial either by recent or by popular.
+			3. Migration to change embed_text attribute of commercial into video_id. Embed_text will become a method.
+			4. Incorporate a search website function.

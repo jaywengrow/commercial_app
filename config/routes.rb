@@ -10,6 +10,7 @@ CommercialApp::Application.routes.draw do
   match '/signout', :to => 'sessions#destroy'
   match '/vote',    :to => 'votes#vote'
   match '/choose_winner', :to => 'commercials#choose_winner'
+  match '/business_users', :to => 'users#business_index'
   
   resources :users
  	resources :commercials

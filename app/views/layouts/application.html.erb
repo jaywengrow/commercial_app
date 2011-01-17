@@ -12,6 +12,7 @@
   <div class="container">
     <%= render 'layouts/header' %>
     <section class="round">
+       <%= render 'layouts/search' %>
       <% flash.each do |key, value| %>
         <div class="flash <%=key %>"><%= value %></div>
       <% end %>

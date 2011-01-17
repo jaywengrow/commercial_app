@@ -32,12 +32,7 @@ text-decoration: underline;
 a:visited {
 color: #069;
 }
-.left_link {
-text-align: center;
-}
-.right_link {
-text-align: center;
-}
+
 
 /* Navigation */
 nav {
@@ -136,8 +131,22 @@ footer nav {
 float: none;
 }
 /* experiment */
+.left_link {
+text-align: center;
+}
+.right_link {
+text-align: center;
+}
+.search {
+text-align: right;
+padding: 1px;
+clear: both;
+}
 .center {
 text-align: center;
+}
+.medium_font {
+font-size: 100%;
 }
 div.main {
 text-align: center;

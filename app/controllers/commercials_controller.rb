@@ -5,7 +5,18 @@ class CommercialsController < ApplicationController
 	before_filter :winner_auth, :only => [:choose_winner]
 	
   def index
-  	@commercials = Commercial.all
+  	search = params[:search]
+  	if search
+  		@commercials = Commercial.where("title LIKE :term OR transcript LIKE :term", :term => "%#{search}%")
+  		User.businesses.where("name LIKE :term", :term => "%#{search}%").each do |user|
+  			user.commercials.each do |commercial|
+	  			@commercials << commercial unless @commercials.include?(commercial)
+  			end
+  		end
+  		@search_message = "Sorry, no matches found." if @commercials.empty?
+  	else
+  		@commercials = Commercial.all
+  	end  	
   	@title = "All the commercials!"
   end
 

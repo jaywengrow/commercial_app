@@ -1,0 +1,9 @@
+<% form_tag commercials_path, :class => 'search', :method => 'get' do %>
+	
+		<%= text_field_tag :search, params[:search] %>
+		<%= submit_tag "Search", :name => nil %>&nbsp;&nbsp;
+	
+<% end %>
+<% if @search_message %>
+	<h3><%= "#{@search_message}" %></h3>
+<% end %>

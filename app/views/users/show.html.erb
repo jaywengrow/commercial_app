@@ -23,7 +23,7 @@
 			<% if current_user == @user && current_user.business_user? %>
 				<%= link_to "Create new contest", new_commercial_path, :class => "signup_button round" %>
 			<% end %>
- 			<% unless @user.posts.empty? %>
+ 			<% if @user.posts.any? && current_user?(@user) %>
  				<table class="posts" summary "User Posts">
  					<span>Your posts:</span><br />
  					<%= render @posts %>

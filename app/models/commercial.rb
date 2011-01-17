@@ -13,7 +13,7 @@
 #
 
 class Commercial < ActiveRecord::Base
-	attr_accessible :title, :transcript
+	#attr_accessible :title, :transcript
 	
 	has_many :posts
 	belongs_to :user
@@ -24,5 +24,7 @@ class Commercial < ActiveRecord::Base
   
   default_scope :order => 'commercials.created_at DESC'
   scope :limit_5, limit(5)
+  
+
 
 end

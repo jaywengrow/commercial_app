@@ -16,7 +16,7 @@
 
 class Post < ActiveRecord::Base
 	attr_accessor :embed_text
-	attr_accessible :title
+	#attr_accessible :title, :embed_text
 	has_many   :votes, :dependent => :destroy
 	belongs_to :user
 	belongs_to :commercial

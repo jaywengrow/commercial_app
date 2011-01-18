@@ -3,16 +3,18 @@
 <div class="main round">	
 	<strong>Recently posted contests:</strong><br />
 	<% recent_commercials.each do |commercial| %>
+	 <div class="centerize"
 		<%= gravatar_for commercial.user %>
 		<%= link_to "#{commercial.title}", commercial_path(commercial) %><br />
+	</div>
 	<% end %>
 </div>
 <div class="bottombar round">
 	<strong>Highest voted commercials:</strong><br />
 			<% popular_posts.each do |post| %>
  
-				<%= link_to image_tag("#{post.thumbnail}"), commercial_path(post.commercial) %><br />
-				<%= link_to "#{post.title}", commercial_path(post.commercial) %><br />
+				<%= link_to image_tag("#{post.thumbnail}"), post_path(post) %><br />
+				<%= link_to "#{post.title}", post_path(post) %><br />
 			
 			<% end %>
 			

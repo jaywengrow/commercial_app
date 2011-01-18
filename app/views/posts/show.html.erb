@@ -33,3 +33,4 @@
 	<%= link_to "Select as winner", choose_winner_path(:post => @post.id), 
 																										 :confirm => "Are you sure that you want to select this post as the winner?" %>
 <% end %>
+<%= link_to "Go to contest!", commercial_path(@post.commercial), :class => "contest_button round" %>

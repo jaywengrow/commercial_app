@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_filter :authenticate
+	before_filter :authenticate, :except => [:show]
 	before_filter :non_business_filter, :except => [:edit, :update, :destroy, :show]
 	before_filter :correct_user, :only => [:edit, :update, :destroy]
 	

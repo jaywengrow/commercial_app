@@ -25,7 +25,7 @@
 			<% end %>
  			<% if @user.posts.any? && current_user?(@user) %>
  				<table class="posts" summary "User Posts">
- 					<span>Your posts:</span><br />
+ 					<div class="centerize medium_font">Your video posts so far:</div><br />
  					<%= render @posts %>
  				</table>
  			<% end %>

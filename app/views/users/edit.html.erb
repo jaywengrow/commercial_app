@@ -1,4 +1,8 @@
 <h1>Edit user</h1>
+<div>
+	<%= gravatar_for @user %>
+	<a href="http://gravatar.com/emails">change</a>
+</div>
 <%= form_for(@user) do |f| %>
 	<%= render 'shared/error_messages', :object => f.object %>
 	<div class="field">
@@ -21,9 +25,5 @@
 		<%= f.submit "Update" %>
 	</div>
 <% end %>
-
-<div>
-	<%= gravatar_for @user %>
-	<a href="http://gravatar.com/emails">change</a>
-</div>
+	<%= button_to "Cancel", {:action => "show", :id => @user}, :method => :get  %>
 

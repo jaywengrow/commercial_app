@@ -6,9 +6,10 @@ class VotesController < ApplicationController
 		@vote = Vote.find_or_create_by_user_id_and_post_id(current_user.id, params[:post])
 		@vote.value = params[:value]
 		if @vote.save
+			#logger.debug "blue #{@post.embed_text}"
 			@post.vote_total = @post.votes.sum(:value)
 			@post.save
-			#flash[:success] = "Vote counted!"
+			#logger.debug "yellow #{check}"
 		else
 			flash[:error] = "No vote!!!"
 		end

@@ -1,8 +1,8 @@
 <tr>
 	<td class="commerical center">
 		<% if @show %>
-			<%= link_to "View by most recent", commercial_path(commercial, :view => "recent", :class => "left_link") %><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-			<%= link_to "View by highest voted", commercial_path(commercial, :view => "popular", :class => "right_link") %><br />
+			<%= link_to "Sort by date", commercial_path(commercial, :view => "recent", :class => "left_link") %><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<%= link_to "Sort by votes", commercial_path(commercial, :view => "popular", :class => "right_link") %><br />
 		<% end %>
 		<h4 class="commercial_business"><%= gravatar_for commercial.user, :size => 40 %>&nbsp;<%= link_to "#{commercial.user.name}", user_path(commercial.user) %></h4>
 		<h5 class="commercial_title"><%= "#{commercial.title}" %></h5>

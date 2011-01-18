@@ -22,9 +22,9 @@ class Post < ActiveRecord::Base
 	belongs_to :commercial
 
 	validates :title,      :presence => true
-	validates :embed_text, :presence => true
+	validates :embed_text, :presence => true, :on => :create
 	
-	before_save :extract_video_id
+	before_create :extract_video_id
 	
 	scope :recent,  order('created_at DESC')
 	scope :popular, order('vote_total DESC')

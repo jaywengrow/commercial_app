@@ -3,10 +3,12 @@
 <div class="main round">	
 	<strong>Recently posted contests:</strong><br />
 	<% recent_commercials.each do |commercial| %>
-	 <div class="centerize"
-		<%= gravatar_for commercial.user %>
+	
+		<%= gravatar_for commercial.user %>	 
+		
 		<%= link_to "#{commercial.title}", commercial_path(commercial) %><br />
-	</div>
+		
+	
 	<% end %>
 </div>
 <div class="bottombar round">

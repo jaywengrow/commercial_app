@@ -9,19 +9,19 @@ namespace :db do
 								 :password => "foobar",
 								 :password_confirmation => "foobar")
 		admin.toggle!(:admin)
-		business = User.create(:name => "The Pet Store", :email => "pets@thepetstore.com", #sample business user
+		business = User.create(:name => "The Pet Store", :email => "jaywngrw@gmail.com", #sample business user
 													 :password => "business", :password_confirmation => "business")
 		business.toggle!(:business_user)
-		business2 = User.create(:name => "FBI", :email => "fbi@fbi.com", #sample business user
+		business2 = User.create(:name => "FBI", :email => "rebitzele1@gmail.com", #sample business user
 													 :password => "business", :password_confirmation => "business")
 		business2.toggle!(:business_user)
-		business3 = User.create(:name => "Best Coffee", :email => "best@coffee.com", #sample business user
+		business3 = User.create(:name => "Best Coffee", :email => "renawengrow@gmail.com", #sample business user
 													 :password => "business", :password_confirmation => "business")
 		business3.toggle!(:business_user)
-		business4 = User.create(:name => "Chicago Public Library", :email => "chicago@library.com", #sample business user
+		business4 = User.create(:name => "Chicago Public Library", :email => "jaywngrw@aol.com", #sample business user
 													 :password => "business", :password_confirmation => "business")
 		business4.toggle!(:business_user)
-		business5 = User.create(:name => "Edible Cookies", :email => "edible@cookies.com", #sample business user
+		business5 = User.create(:name => "Edible Cookies", :email => "rebitzele@aol.com", #sample business user
 													 :password => "business", :password_confirmation => "business")
 		business5.toggle!(:business_user)
 		business.commercials.create!(:title => "Make our next Pet Store Super bowl ad and win airfare to London!", :transcript => "Self explanatory!") 

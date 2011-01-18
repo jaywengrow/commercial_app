@@ -1,27 +1,15 @@
+<div class="centerize">
 <% if post.winner? %>
 	<span id="winner">This is the winning post!</span><br />
 <% end %>
 <span><%= gravatar_for post.user, :size => 40 %>From&nbsp;<%= "#{post.user.name}" %>:&nbsp;</span>
-<span><%= "#{post.title}" %></span>
-<div><%= sanitize post.video_display, :tags => %w(embed object param) %></div>
-<span>Current vote score: <div id="<%= post.title %>"><%= "#{post.vote_total}" %></div></span><br />
-<% if signed_in? && !current_user.business_user? %>	
-	<%= link_to image_tag("thumbs_up.gif", :alt => "Vote thumbs up!", :class => "thumb"), vote_path(:value => 1, :post => post.id), :class => "thumbs_up_button",
-			:remote => true %>
-	<%= link_to image_tag("thumbs_down.gif", :alt => "Vote thumbs down!", :class => "thumb"), vote_path(:value => -1,
-											  :post => post.id), :class => "thumbs_down_button", :remote => true %>
-	<% @vote = Vote.find_by_user_id_and_post_id(current_user.id, post.id) %>
-	<div id="vote<%= post.id %>">
-	<% if @vote %>
-		<p>You voted 
-				<% if @vote.value == 1 %><%= image_tag("thumbs_up.gif", :alt => "Thumbs up!") %>  <% end %>
-				<% if @vote.value == -1 %><%= image_tag("thumbs_down.gif", :alt => "Thumbs down!") %>  <% end %>
-		</p>
-	<% else %>
-		<div id="no_vote"> You have not yet voted! </div>
-	<% end %>
-	</div>
-<% end %>
+<span><%= "#{post.title}" %></span><br />
+<%= link_to image_tag("#{post.thumbnail}"), post_path(post), :class => "centerize" %><br />
+<span class="timestamp">
+	Posted <%= time_ago_in_words(post.created_at) %> ago.
+</span><br />
+<span>Current vote score: <div id="<%= post.title %>" class="medium_font"><%= "#{post.vote_total}" %></div></span><br />
+
 
 <% if (current_user == post.user) || (current_user == post.commercial.user) %>	
 	<%= link_to "Edit", edit_post_path(post) %>
@@ -32,4 +20,5 @@
 																										 :confirm => "Are you sure that you want to select this post as the winner?" %>
 <% end %>
 <br /><br />
+</div>
 

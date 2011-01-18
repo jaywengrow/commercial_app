@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	before_filter :authenticate
-	before_filter :non_business_filter, :except => [:edit, :update, :destroy]
+	before_filter :non_business_filter, :except => [:edit, :update, :destroy, :show]
 	before_filter :correct_user, :only => [:edit, :update, :destroy]
 	
 	def new
@@ -13,12 +13,18 @@ class PostsController < ApplicationController
 		@post = current_user.posts.build(params[:post])
 		@commercial = @post.commercial
   	if @post.save
-  		flash[:success] = "Post created for commercial #{@post.commercial_id}!"
+  		flash[:success] = "Video posted!"
   		redirect_to commercial_path(@post.commercial)
   	else
   		flash[:error] = "Post not created."
   		render 'new'
   	end
+	end
+	
+	def show
+		@post = Post.find(params[:id])
+		@title = @post.title
+		render 'show'
 	end
 	
 	def edit

@@ -142,11 +142,13 @@ text-align: right;
 padding: 1px;
 clear: both;
 }
-.center {
+.centerize {
+margin-left: auto;
+margin-right: auto;
 text-align: center;
 }
 .medium_font {
-font-size: 100%;
+font-size: 200%;
 }
 div.main {
 text-align: center;

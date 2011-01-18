@@ -15,7 +15,7 @@ CommercialApp::Application.routes.draw do
   
   resources :users
  	resources :commercials
- 	resources :posts, :except => [:index, :show]
+ 	resources :posts, :except => [:index]
   resources :sessions, :only => [:new, :create, :destroy]
  
   # The priority is based upon order of creation:

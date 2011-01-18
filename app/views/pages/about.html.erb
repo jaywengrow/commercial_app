@@ -1,9 +1,11 @@
-<h1 class="center">Commercial.ize is the right way to advertise in the new era of the Social Web.</h1>
-<p> Instead of banner ads and flash videos that attempt to grab web surfers' attention in irrelevant and ineffective ways, Commercial.ize provides a venue for businesses of all sizes to host advertisements that Internet users actually want to see and get involved in. And in an extremely simple and easy to use way, to boot.
+<div class="centerize">
+<h1>Commercialize is the right way to advertise in the new era of the Social Web.</h1>
+<p> Instead of banner ads and flash videos that attempt to grab web surfers' attention in irrelevant and ineffective ways, Commercialize provides a venue for businesses of all sizes to host advertisements that Internet users actually want to see and get involved in. And it's really easy to use.
 </p>
-<p>Any business can launch a "Create your own commercial" contest, in which anyone can participate by posting their own homemade video that follows the particular rules for the contest. All the videos are open for everyone to view, and viewers can vote "Thumbs up" or "Thumbs down" for all the videos to help other viewers quickly find the best videos. When the contest is over, the company selects the winning video (based on their own criteria), and the video's submitter wins a handsome prize as described in the contest's rules!</p>
-<p>Commercial.ize is an easy and fun way for people to watch creative commercials, ones that they actually want to see!</p>
-<p>There is a small fee for a business to post a contest on Commercial.ize, which depends on how long the contest will be displayed at Commercial.ize.</p>
-<p>Start by browsing the most popular commercials on Commercial.ize, and sign up so you can cast your votes!</p>
-		<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %><br />	<%= link_to "Businesses start here!", business_signup_path,
-																	 :class => "b_signup_button round" %>
+<p>Any business can launch a "Create your own commercial" contest, in which anyone can participate by posting his or her own homemade video that follows the particular rules for that contest. All the videos are open for anyone to view, and viewers can express their opinion by voting "Thumbs up" or "Thumbs down" for any video. When the contest is over, the company selects the winning video (based on its own criteria), and the video's submitter wins the prize as described in the contest's rules!</p>
+<p>Sign up now to post your own videos and to vote on all the others!</p>
+<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %><br />	
+<h3>For businesses:</h3>
+<%= render 'pages/intro_text' %>
+<%= link_to "Businesses start here!", business_signup_path, :class => "b_signup_button round" %>
+</div>

@@ -1,7 +1,7 @@
 module ApplicationHelper
 
     def logo
-      image_tag("logo.png", :alt => "Commercial.ize logo", :class => "round")
+      image_tag("logo.png", :alt => "Commercialize logo", :class => "round")
     end
     
     def popular_posts

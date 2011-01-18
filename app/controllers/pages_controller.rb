@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @title = "Welcome to Commercial.ize!"
+    @title = "Welcome to Commercialize!"
     if signed_in?
     	if current_user.business_user? && current_user.commercials.empty?
     		render 'introduction' 		

@@ -40,8 +40,8 @@ class UsersController < ApplicationController
     logger.debug "Value of @business #{@business}"
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to Commercial.ize!"
-      redirect_to @user
+      flash[:success] = "Welcome to Commercialize!"
+      redirect_to root_path
     else
 			@title = "Sign up"
     	@title = "Business sign up" if @business

@@ -25,7 +25,7 @@
 			<%= render @posts %>
 		<% else %>
 			<%= link_to "Go to contest!", commercial_path(commercial), :class => "contest_button round" %>
-			 <div class="center"><%= "(#{commercial.posts.count} posts)" %></div>
+			 <div class="centerize"><%= pluralize(commercial.posts.count, "post") %></div>
 		<% end %>		
 			<br /><br />
 	</td>

@@ -25,6 +25,7 @@ class Post < ActiveRecord::Base
 	validates :embed_text, :presence => true, :on => :create
 	
 	before_create :extract_video_id
+	before_create :initialize_vote_total
 	
 	scope :recent,  order('created_at DESC')
 	scope :popular, order('vote_total DESC')
@@ -40,6 +41,10 @@ class Post < ActiveRecord::Base
 	
 	def thumbnail	
   	thumbnail_url = "http://img.youtube.com/vi/" + video_id + "/1.jpg"
+	end
+	
+	def initialize_vote_total
+		vote_total = 0
 	end
 
 

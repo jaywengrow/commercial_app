@@ -131,6 +131,9 @@ footer nav {
 float: none;
 }
 /* experiment */
+.red {
+color: red;
+}
 .left_link {
 text-align: center;
 }

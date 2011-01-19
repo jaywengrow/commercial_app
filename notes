@@ -1,7 +1,0 @@
-    <td class="sidebar round">
-      <strong>Most popular commercials</strong><br />
-      <% popular_posts.each do |post| %>
-				<%= link_to image_tag("#{post.thumbnail}"), commercial_path(post.commercial) %><br />
-				<%= link_to "#{post.title}", commercial_path(post.commercial) %>
-			<% end %>
-    </td>

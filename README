@@ -1,8 +1,5 @@
 Created by Jay Wengrow
 
-This is my first Ruby on Rails project. With it, I hope to gain exprerience using Ruby
-on Rails.
+This app is called Commercialize, and it's my first Ruby on Rails project. Commercialize is a hub for 'make your own commercial contests.' Businesses launch contests, and other users post their own homemade videos of commercials for the businesses, following each contest's particular rules. Anyone can view any commercial and vote on them as well.
 
-This is a web application, in which businesses can post transcript for video/audio
-commercial advertisements, and then users from the rest of the world can post their
-renditions of these ads, and if selected by the company, can receive a monetary reward.
+The app is currently deployed at http://commercialize.heroku.com

@@ -32,7 +32,7 @@ class Post < ActiveRecord::Base
 	scope :limit_3, limit(3)
 	
 	def extract_video_id
-		self.video_id = /youtube.com\/v\/(\w*)\?/.match(embed_text)[1]	
+		self.video_id = /youtube.com\/v\/([\w-]*)\?/.match(embed_text)[1]	
 	end
 	
 	def video_display

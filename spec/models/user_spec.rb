@@ -80,7 +80,7 @@ describe User do
     it "should reject passwords above 40 characters" do
       long_password = "q" * 41
       User.new(@attr.merge(:password => long_password,
-                           :pasword_confirmation => long_password)).
+                           :password_confirmation => long_password)).
         should_not be_valid
     end
   end 

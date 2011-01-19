@@ -18,7 +18,7 @@
  			<% unless @user.business_user? %>
  				<h1>Welcome, <%= "#{current_user.name}" %>.</h1>
 				<h3>At Commercialize, you don't have to sit and watch commercials. You can make your own!</h3>
-				<p>To start, you want to view the various commercial contests out there. To do so, click the "Commercials" link at the top of the page. You can edit your 					profile at any time by clicking on the "Edit profile" link.</p>
+				<p>To start, you want to view the various commercial contests out there. To do so, click the "Contests" link at the top of the page. You can edit your 					profile at any time by clicking on the "Edit profile" link.</p>
 			<% end %>
 			<% if current_user == @user && current_user.business_user? %>
 				<%= link_to "Create new contest", new_commercial_path, :class => "signup_button round" %>

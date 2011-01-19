@@ -3,6 +3,7 @@ Factory.define :user do |user|
   user.email                 "jaywengrow@example.edu"
   user.password              "password"
   user.password_confirmation "password"
+  user.business_user					false
 end
 
 Factory.sequence :email do |n|

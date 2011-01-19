@@ -9,7 +9,7 @@ namespace :db do
 								 :password => "foobar",
 								 :password_confirmation => "foobar")
 		admin.toggle!(:admin)
-		business = User.create(:name => "The Pet Store", :email => "jaywngrw@gmail.com", #sample business user
+		business = User.create(:name => "The Pet Store", :email => "jwengro@luc.edu", #sample business user
 													 :password => "business", :password_confirmation => "business")
 		business.toggle!(:business_user)
 		business2 = User.create(:name => "FBI", :email => "rebitzele1@gmail.com", #sample business user

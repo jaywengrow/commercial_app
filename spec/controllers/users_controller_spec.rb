@@ -14,10 +14,11 @@ describe UsersController do
 
     before(:each) do
       @user = Factory(:user)
+      test_sign_in(@user)
     end
     
     it "should be successful" do
-      get :show, :id => @user
+      get :show, :id => @user.id
       assigns(:user).should == @user
     end
     
@@ -94,7 +95,7 @@ describe UsersController do
       
       it "should redirect to the user show page" do
         post :create, :user => @attr
-        response.should redirect_to(user_path(assigns(:user)))
+        response.should redirect_to root_path
       end
       
       it "should have a welcome message" do

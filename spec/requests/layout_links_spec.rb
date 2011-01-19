@@ -2,6 +2,7 @@ require 'spec_helper'
 
   describe "LayoutLinks" do
   
+  
     it "should have a Home page at '/'" do
       get '/'
       response.should have_selector('title', :content => "Welcome")
@@ -32,7 +33,7 @@ require 'spec_helper'
 					visit signin_path
 					fill_in :email, :with => @user.email
 					fill_in :password, :with => @user.password
-					click_button
+					click_button "Sign in"
 			end
 
 			it "should have a signout link" do
@@ -56,7 +57,7 @@ require 'spec_helper'
 					visit signin_path
 					fill_in :email, :with => ""
 					fill_in :password, :with => ""
-					click_button
+					click_button "Sign in"
 					response.should have_selector("div.flash.error", :content => "Invalid")
 				end
 			end
@@ -68,7 +69,7 @@ require 'spec_helper'
 					visit signin_path
 					fill_in :email, :with => user.email
 					fill_in :password, :with => user.password
-					click_button
+					click_button "Sign in"
 					controller.should be_signed_in
 					click_link "Sign out"
 					controller.should_not be_signed_in

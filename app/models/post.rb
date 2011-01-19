@@ -44,7 +44,7 @@ class Post < ActiveRecord::Base
 	end
 	
 	def initialize_vote_total
-		vote_total = 0
+		self.vote_total = 0
 	end
 
 
